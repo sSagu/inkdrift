@@ -119,7 +119,8 @@ int pxwin_create(PxWin *w, const char *title, int cw, int ch, PxFrameFn frame, P
     wc.lpfnWndProc = proc;
     wc.hInstance = inst;
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
-    wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+    wc.hIcon = LoadIcon(inst, MAKEINTRESOURCE(1));            // config\icon.ico (torii)
+    if (!wc.hIcon) wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
     wc.lpszClassName = PXWIN_CLASS;
     RegisterClassW(&wc);
     if (!px_canvas_init(&w->canvas, cw, ch)) return 0;

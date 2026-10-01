@@ -34,7 +34,9 @@ try {
     $srcs = Get-ChildItem "$root\config\src\*.c" | ForEach-Object { $_.FullName }
     $cflags = @("-O2", "-std=gnu11", "-D_WIN32_WINNT=0x0A00", "-DUNICODE", "-Wall", "-Wno-unused-parameter",
                 "-Wno-missing-field-initializers", "-mwindows")
-    & gcc @cflags -o "$bin\config.exe" @srcs "$obj\res.o" -lm -lgdiplus -lgdi32 -luser32 -ladvapi32 -lshell32
+    & windres --include-dir . config\config.rc -O coff -o "$obj\config-res.o"   # manifiesto + icono (torii)
+    if ($LASTEXITCODE -ne 0) { throw "windres (config) failed" }
+    & gcc @cflags -o "$bin\config.exe" @srcs "$obj\config-res.o" -lm -lgdiplus -lgdi32 -luser32 -ladvapi32 -lshell32
     if ($LASTEXITCODE -ne 0) { throw "config failed" }
     "OK  bin\config.exe"
 } finally { Pop-Location }

@@ -3,6 +3,17 @@
 *Endless ink-painted landscapes drifting across your desktop.*
 *Paisajes a tinta que derivan sin fin por tu escritorio.*
 
+## ⬇ [Download for Windows / Descargar para Windows](https://github.com/sSagu/inkdrift/releases/latest/download/inkdrift-windows-x64.zip)
+
+1. Download the zip and extract it anywhere. / Bajá el zip y descomprimilo donde quieras.
+2. Open **`config.exe`**. / Abrí **`config.exe`**.
+3. Pick **CHINA** or **JAPAN** and press **APPLY** (button **ES/EN** for the language). / Elegí **CHINA** o **JAPÓN** y apretá **APLICAR**.
+
+That's it: no installer, no admin rights. Windows may show a SmartScreen warning the first time (the app is not code-signed): *More info → Run anyway*.
+Eso es todo: sin instalador ni permisos de administrador. Windows puede mostrar un aviso de SmartScreen la primera vez (no está firmado): *Más información → Ejecutar de todas formas*.
+
+---
+
 Animated, infinitely scrolling ink-painting wallpapers for Windows, written in plain C (no browser, no runtime).
 Fondos de pantalla animados de pintura a tinta con scroll infinito para Windows, escritos en C puro (sin navegador).
 
@@ -14,7 +25,7 @@ Fondos de pantalla animados de pintura a tinta con scroll infinito para Windows,
 
 ## English
 
-### Build
+### Build from source (optional)
 1. Install [w64devkit](https://github.com/skeeto/w64devkit) (or any MinGW-w64 with `gcc` and `windres`).
 2. In PowerShell:
    ```powershell
@@ -41,7 +52,7 @@ Hold **LEAVE** in `config.exe` or exit from the tray, turn off "START WITH WINDO
 
 ## Español
 
-### Compilar
+### Compilar desde el código (opcional)
 1. Instalá [w64devkit](https://github.com/skeeto/w64devkit) (o cualquier MinGW-w64 con `gcc` y `windres`).
 2. En PowerShell:
    ```powershell
